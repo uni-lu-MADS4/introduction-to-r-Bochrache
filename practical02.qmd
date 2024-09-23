@@ -1,6 +1,6 @@
 ---
 title: "Getting started with R"
-author: Your name here
+author: Bochra chemam
 date: today
 format: html
 ---
@@ -11,7 +11,7 @@ format: html
 
 ```{r}
 # Your answer in code
-
+ c("A","B","C")
 ```
 > Your answer as text
 
@@ -20,14 +20,15 @@ format: html
 * Assign the vector to a variable `my_letters`
 ```{r}
 # Your answer in code
-
+my_letters <- c("A","B","C")
 ```
 
 
 * Check the what happens when you run `letters` (just this) on the command line.
 ```{r}
 # Your answer in code
-
+[1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w"
+[24] "x" "y" "z"
 ```
 
 > Your answer as text
@@ -37,7 +38,7 @@ format: html
 * What happens when you concatenate two vectors? Add `c(my_letters , my_letters)`
 ```{r}
 # Your answer in code
-
+[1] "A" "B" "C" "A" "B" "C"
 
 ```
 
@@ -49,7 +50,7 @@ format: html
 ```{r}
 # Your answer in code
 
-
+Error in letters + 1 : non-numeric argument to binary operator
 ```
 
 > Your answer as text
@@ -65,9 +66,9 @@ format: html
 
 ```{r}
 # Your answer in code
-
-
-
+my_vec <- seq(from = 1, to = 8)
+my_vec <- my_vec+2
+my_vec <- my_vec+ c(1,2,3,4)
 
 
 ```
@@ -95,8 +96,9 @@ format: html
 
 ```{r}
 # Your answer in code
-
-
+matrix(1:6, nrow = 3)
+A <- matrix(1:6, nrow = 3)
+dim(A)
 
 
 
