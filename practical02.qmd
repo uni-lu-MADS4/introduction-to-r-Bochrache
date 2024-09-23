@@ -27,8 +27,7 @@ my_letters <- c("A","B","C")
 * Check the what happens when you run `letters` (just this) on the command line.
 ```{r}
 # Your answer in code
-[1] "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k" "l" "m" "n" "o" "p" "q" "r" "s" "t" "u" "v" "w"
-[24] "x" "y" "z"
+letters
 ```
 
 > Your answer as text
@@ -38,8 +37,7 @@ my_letters <- c("A","B","C")
 * What happens when you concatenate two vectors? Add `c(my_letters , my_letters)`
 ```{r}
 # Your answer in code
-[1] "A" "B" "C" "A" "B" "C"
-
+ c(my_letters , my_letters)
 ```
 
 > Your answer as text
@@ -50,7 +48,7 @@ my_letters <- c("A","B","C")
 ```{r}
 # Your answer in code
 
-Error in letters + 1 : non-numeric argument to binary operator
+ letters + 1
 ```
 
 > Your answer as text
@@ -95,10 +93,21 @@ my_vec <- my_vec+ c(1,2,3,4)
 7. Compute the transpose of `A`
 
 ```{r}
-# Your answer in code
+#1 write Matrix
 matrix(1:6, nrow = 3)
+#2 Assign it as A
 A <- matrix(1:6, nrow = 3)
+#3 chech dim
 dim(A)
+#4 extract the 5th element
+A[3:3]
+#5 add new column
+A <- cbind(A, c(0,0,0))
+#6 modify the 4th element to 0
+A[A=4] <- 0
+A
+#7transpose
+t(A)
 
 
 
@@ -109,13 +118,13 @@ dim(A)
 8. Are any values in `A` larger than 10? 
 ```{r}
 # Your answer in code
-
+A[A > 10] 
 ```
 
 9. Are all values in `A` smaller than 10?
 ```{r}
 # Your answer in code
-
+A[A < 10] 
 ```
 
 ### Exercise 4
@@ -138,8 +147,14 @@ dim(A)
 
 ```{r}
 # Your answer in code
+#we assume that the input will be always numeric
+quick_stats <- function(x){
+  Mean_value <- mean(x,na.rm=TRUE)
+  Median_value <- median(x,na.rm=TRUE)
+  SD_value <- sd(x,na.rm=TRUE)
 
-
+  return(list(mean = Mean_value, median = Median_value, sd = SD_value))
+}
 
 ```
 
@@ -150,8 +165,10 @@ The output of `c('1' , "a", NA, "2", NA)` should be 2.
 
 ```{r}
 # Your answer in code
-
-
+vec <- c('1', "a", NA, "2", NA)
+vec %>%
+  is.na() %>%
+  sum()
 
 ```
 
