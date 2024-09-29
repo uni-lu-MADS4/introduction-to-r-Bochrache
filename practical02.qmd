@@ -133,7 +133,12 @@ A[A < 10]
 
 ```{r}
 # Your answer in code
-
+# Define the function
+sum_values <- function(a, b) {
+  
+  # Coerce both values to numeric and return the sum
+  return(as.numeric(a) + as.numeric(b))
+}
 
 
 
